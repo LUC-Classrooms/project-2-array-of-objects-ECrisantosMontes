@@ -21,6 +21,9 @@ function setup(){
 
 function draw(){
   background(200); //light gray background
-  
+  for(let i =0; i < SpeechRecognitionResult.length; i++){
+    sprites[i].display()
+    sprites[i].move();
+  }
 }
 
