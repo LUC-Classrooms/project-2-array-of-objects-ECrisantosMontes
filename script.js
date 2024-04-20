@@ -27,7 +27,7 @@ pac1 = new Pac();
 }
 
 function draw(){
-  background(0, 0, 0, 30); //black baground... while trying to make semi-translucent black I discovered it has cool effect on other elements so left it as is
+  background(0, 0, 0, 30); //black baground... while trying to make semi-translucent black I discovered it has cool after-effect on cherrys/pac so left it as is
 
   for(let i = 0; i < sprites.length; i++){
     sprites[i].display();
