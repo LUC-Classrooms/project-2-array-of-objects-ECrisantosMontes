@@ -2,8 +2,8 @@
 function Sprite (tempX, tempY){
     this.x = tempX;
     this.y = tempY;
-    this.xSpeed = random(-2, 2);
-    this.ySpeed = random(-2, 2);
+    this.xSpeed = random(-1, 1);
+    this.ySpeed = random(-1, 1);
 
  this.move = function(){
         this.x += this.xSpeed;
@@ -19,11 +19,16 @@ function Sprite (tempX, tempY){
 this.display = function(){
 push(); // creates new layer
 translate(this.x, this.y);// moves new layers origin point on canvas
-rectMode(CENTER);
-fill(200, 50, 200, 50);
-rect(0, 0, 75); // rectangle
-ellipse(-20, -10, 5, 10)
-ellipse(20, -10, 5, 10)
+strokeWeight(2);
+stroke(0, 0, 0, 80);
+fill(200, 50, 100, 200);
+ellipse(-20, -10, 40, 40);
+ellipse(20, -10, 40, 40);
+noFill();
+strokeWeight(4);
+stroke(50, 100, 50, 200)
+arc(20, -55, 60, 60, HALF_PI, PI);
+arc(13, -30, 70, 70, PI, PI + QUARTER_PI);
 pop();// dispose layer
 }
 

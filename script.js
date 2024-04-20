@@ -11,13 +11,13 @@
 ***/
 
 // Global Variables go here
-var sprites = new Array(80)
-var blob1;
+var sprites = new Array(40) ////Cherrys heh
+var pac1// impostor pac-man
 
 function setup(){
   // this function will run once
   createCanvas(600, 400); // create a 600 x 400 pixel drawing canvas
-blob1 = new Blob();
+pac1 = new Pac();
 
 
   for(let i = 0; i < sprites.length; i++){
@@ -27,17 +27,17 @@ blob1 = new Blob();
 }
 
 function draw(){
-  background(200); //light gray background
+  background(0, 0, 0, 30); //black baground... while trying to make semi-translucent black I discovered it has cool effect on other elements so left it as is
 
   for(let i = 0; i < sprites.length; i++){
     sprites[i].display();
     sprites[i].move();
   }
-  blob1.display();
-  blob1.move();
+  pac1.display();
+  pac1.move();
 }
 
-function Blob(){
+function Pac(){
   this.x = random(width);
   this.y = random(height);
   this.xSpeed = random(-2, 2);
@@ -59,8 +59,11 @@ function Blob(){
   this.display = function(){
     push();
     translate(this.x, this.y);
-    fill(0);
-    ellipse(0, 0, 50);
+    fill(255, 255, 60);// BASED OFF Of: https://p5js.org/reference/#/p5/arc///
+    let pacMouth = PI / 16;
+    let startAngle = pacMouth * sin(frameCount * .01) + pacMouth;
+    let endAngle = TWO_PI - startAngle;
+    arc(0, 0, 80, 80, startAngle, endAngle, PIE);
     pop();
   }
 }
